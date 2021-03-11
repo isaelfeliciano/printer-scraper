@@ -1,0 +1,11 @@
+{
+	"name": "printer-scraper",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "node scraper.js"
+	},
+	"dependencies": {
+		"puppeteer": "^8.0.0"
+	}
+}
