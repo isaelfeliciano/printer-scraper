@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const C = require('./constants');
+const creds = require('./constants');
 const USERNAME_SELECTOR = '#login-email';
 const PASSWORD_SELECTOR = '#login-password';
 const CTA_SELECTOR = '#login-submit';
