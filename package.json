@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "lowdb": "^1.0.0",
+    "puppeteer": "^8.0.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {
