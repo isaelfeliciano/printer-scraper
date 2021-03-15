@@ -2,7 +2,7 @@
 	"printers": [
 		{
 			"id": 1,
-			"ip_address": "http://192.168.254.30/",
+			"ip_address": "http://192.168.254.30",
 			"brand": "Canon",
 			"model": "iR-ADV 4245",
 			"ui_type": "canonNew",
