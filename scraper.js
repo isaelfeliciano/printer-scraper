@@ -44,30 +44,32 @@ async function scrapPrinter (printer) {
   console.log(`${printer.name} is online`);
 
   if (!printer.cta) {
-    console.log('Method 1');
+    // console.log('Method 1');
     await page.goto(printer.browse_to_address);
+    await page.waitForSelector(printer.counter_field);
     let element = await page.$(printer.counter_field);
-    let text = await page.evaluate(element => element.innerText, element)
-    console.log(printer.name)
-    console.log(numeral(text).format(0,0));
+    let text = await page.evaluate(element => element.textContent, element)
+    text = text.replace(':', '');
+    console.log(printer.name, ': ' + numeral(text).format(0,0));
     return
   }
   if (!printer.password) {
-    console.log('Method 2');
+    // console.log('Method 2');
     await page.goto(printer.ip_address);
     await page.waitForNavigation();
     await page.click(printer.first_click);
     await page.click(printer.selector_user);
     await page.keyboard.type(printer.user);
     await page.click(printer.cta);
+    await page.waitForTimeout(2000);
     await page.goto(printer.browse_to_address);
     await page.waitForSelector(printer.counter_field);
     let element = await page.$(printer.counter_field);
     let text = await page.evaluate(element => element.innerText, element);
-    console.log(printer.name, numeral(text).format(0,0));
+    console.log(printer.name, ': ' + numeral(text).format(0,0));
     return
   }
-  console.log('Method 3');
+  // console.log('Method 3');
   await page.goto(printer.ip_address);
   await page.waitForNavigation();
   await page.click(printer.selector_user);
@@ -82,21 +84,14 @@ async function scrapPrinter (printer) {
   await page.waitForSelector(printer.counter_field);
   let element = await page.$(printer.counter_field);
   let text = await page.evaluate(element => element.innerText, element);
-  console.log(printer.name, numeral(text).format(0,0));
-  // await page.authenticate({'username': C.username, 'password': C.password})
-  // await page.waitForNavigation();
-  // await page.screenshot({path: 'calidad_p7.png'});
+  console.log(printer.name, ': ' + numeral(text).format(0,0));
 }
 
-for (let printer of printers) {
-  (async () => {
-    await scrapPrinter(printer)
-    process.exit(1);
-    // await ui_type[printer.ui_type](printer);
-  })();
-}
-
-/*(async () => {
-  await playTest("http://192.168.170.31/machine_status.html");
+const forLoop = async _ => {
+  for (let i = 0; i < printers.length; i++) {
+    const printer = printers[i];
+    await scrapPrinter(printer);
+  }
   process.exit(1);
-})();*/
+}
+forLoop();
