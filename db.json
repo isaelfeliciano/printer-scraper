@@ -2,7 +2,7 @@
 	"printers": [
 		{
 			"id": 1,
-			"ip_address": "192.168.254.30",
+			"ip_address": "http://192.168.254.30/",
 			"brand": "Canon",
 			"model": "iR-ADV 4245",
 			"ui_type": "canonNew",
@@ -19,7 +19,7 @@
 		},
 		{
 			"id": 2,
-			"ip_address": "192.168.120.34",
+			"ip_address": "http://192.168.120.34",
 			"brand": "Sharp",
 			"model": "AR-M257",
 			"ui_type": "sharp",
@@ -36,7 +36,7 @@
 		},
 		{
 			"id": 3,
-			"ip_address": "192.168.120.31",
+			"ip_address": "http://192.168.120.31",
 			"brand": "Canon",
 			"model": "1730",
 			"ui_type": "canonOld",

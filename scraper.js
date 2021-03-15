@@ -9,7 +9,7 @@ const db = low(adapter);
 const printers = db.get('printers').take(1).value();
 
 async function startBrowser() {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   return {browser, page};
 }
@@ -20,7 +20,7 @@ async function closeBrowser(browser) {
 
 const ui_type = {}
 
-scrapPrinter = async function (printer) {
+async function scrapPrinter (printer) {
   const {browser, page} = await startBrowser();
   page.setViewport({width: 1366, height: 768});
   if (!printer.cta) {
@@ -44,18 +44,20 @@ scrapPrinter = async function (printer) {
     console.log(text);
     return
   }
-  await page.goto(printer.ip_adress):
-  await page.click(printer.selector_user);
-  await page.keyboard.type(printer.user);
-  await page.click(printer.selector_password);
-  await page.keyboard.type(printer.password);
-  await page.click(printer.cta);
+  await page.goto('http://192.168.254.5/');
   await page.waitForNavigation();
-  await page.click(printer.next_click);
+  console.log('here');
+  await page.click('#deptid');
+  await page.keyboard.type(printer.user);
+  await page.click('#password');
+  await page.keyboard.type('7654321');
+  await page.click('input.ButtonEnable:nth-child(1)');
+  await page.waitForNavigation();
+  await page.click('.App1_7');
   await page.waitForNavigation();
   await page.goto(printer.browse_to_address);
   let element = await page.$(printer.counter_field);
-  let text = await page.evaluate(element => element.textContennt):
+  let text = await page.evaluate(element => element.textContennt);
   console.log(printer.name);
   console.log(text);
   // await page.authenticate({'username': C.username, 'password': C.password})
@@ -66,8 +68,8 @@ scrapPrinter = async function (printer) {
 for (let printer of printers) {
   (async () => {
     await scrapPrinter(printer)
-    // await ui_type[printer.ui_type](printer);
     process.exit(1);
+    // await ui_type[printer.ui_type](printer);
   })();
 }
 
