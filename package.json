@@ -12,6 +12,7 @@
     "lowdb": "^1.0.0",
     "numeral": "^2.0.6",
     "puppeteer": "^8.0.0",
+    "robotjs": "^0.6.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {

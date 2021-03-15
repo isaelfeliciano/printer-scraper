@@ -10,7 +10,7 @@ const db = low(adapter);
 const printers = db.get('printers').value();
 
 async function startBrowser() {
-  const browser = await puppeteer.launch({ headless: true});
+  const browser = await puppeteer.launch({ headless: false});
   const page = await browser.newPage();
   return {browser, page};
 }
@@ -44,17 +44,18 @@ async function scrapPrinter (printer) {
   console.log(`${printer.name} is online`);
 
   if (!printer.cta) {
-    // console.log('Method 1');
+    console.log('Method 1');
     await page.goto(printer.browse_to_address);
     await page.waitForSelector(printer.counter_field);
     let element = await page.$(printer.counter_field);
     let text = await page.evaluate(element => element.textContent, element)
     text = text.replace(':', '');
     console.log(printer.name, ': ' + numeral(text).format(0,0));
+    closeBrowser(browser);
     return
   }
   if (!printer.password) {
-    // console.log('Method 2');
+    console.log('Method 2');
     await page.goto(printer.ip_address);
     await page.waitForNavigation();
     await page.click(printer.first_click);
@@ -67,9 +68,10 @@ async function scrapPrinter (printer) {
     let element = await page.$(printer.counter_field);
     let text = await page.evaluate(element => element.innerText, element);
     console.log(printer.name, ': ' + numeral(text).format(0,0));
+    closeBrowser(browser);
     return
   }
-  // console.log('Method 3');
+  console.log('Method 3');
   await page.goto(printer.ip_address);
   await page.waitForNavigation();
   await page.click(printer.selector_user);
@@ -85,6 +87,7 @@ async function scrapPrinter (printer) {
   let element = await page.$(printer.counter_field);
   let text = await page.evaluate(element => element.innerText, element);
   console.log(printer.name, ': ' + numeral(text).format(0,0));
+  closeBrowser(browser);
 }
 
 const forLoop = async _ => {
