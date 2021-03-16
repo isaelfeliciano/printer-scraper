@@ -7,10 +7,12 @@ const FileSync = require('lowdb/adapters/FileSync');
 const adapter = new FileSync('db.json');
 const db = low(adapter);
 
-const printers = db.get('printers').value();
+// const printers = [];
+let printers = db.get('printers').value();
+// printers.push(printerslist);
 
 async function startBrowser() {
-  const browser = await puppeteer.launch({ headless: false});
+  const browser = await puppeteer.launch({ headless: true});
   const page = await browser.newPage();
   return {browser, page};
 }
@@ -57,7 +59,8 @@ async function scrapPrinter (printer) {
   if (!printer.password) {
     console.log('Method 2');
     await page.goto(printer.ip_address);
-    await page.waitForNavigation();
+    // await page.waitForNavigation();
+    await page.waitForSelector(printer.selector_user);
     await page.click(printer.first_click);
     await page.click(printer.selector_user);
     await page.keyboard.type(printer.user);
@@ -74,13 +77,17 @@ async function scrapPrinter (printer) {
   console.log('Method 3');
   await page.goto(printer.ip_address);
   await page.waitForNavigation();
+  if (printer.first_click)
+    await page.click(printer.first_click);
   await page.click(printer.selector_user);
   await page.keyboard.type(printer.user);
   await page.click(printer.selector_password);
   await page.keyboard.type(printer.password);
   await page.click(printer.cta);
-  await page.waitForSelector(printer.next_click);
-  await page.click(printer.next_click);
+  if (printer.next_click) {
+    await page.waitForSelector(printer.next_click);
+    await page.click(printer.next_click);
+  }
   await page.waitForTimeout(2000);
   await page.goto(printer.browse_to_address);
   await page.waitForSelector(printer.counter_field);
