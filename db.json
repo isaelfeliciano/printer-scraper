@@ -195,6 +195,42 @@
 			"next_click": false,
 			"browse_to_address": "http://192.168.140.32/_counter.html",
 			"counter_field": ".ModuleElement > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"
+		},
+		{
+			"id": 11,
+			"ip_address": "http://192.168.170.31",
+			"brand": "Sharp",
+			"model": "AR-M257",
+			"ui_type": "sharp",
+			"name": "Calidad P7",
+			"auth_type": "In web Auth",
+			"user": "admin",
+			"password": "Sharp",
+			"selector_user": false,
+			"selector_password": false,
+			"cta": false,
+			"first_click": false,
+			"next_click": false,
+			"browse_to_address": "http://192.168.170.31/machine_status.html",
+			"counter_field": "body > h2:nth-child(11)"
+		},
+		{
+			"id": 12,
+			"ip_address": "http://192.168.254.33",
+			"brand": "Sharp",
+			"model": "AR-M257",
+			"ui_type": "sharp",
+			"name": "Haymar P1",
+			"auth_type": "In web Auth",
+			"user": "admin",
+			"password": "Sharp",
+			"selector_user": false,
+			"selector_password": false,
+			"cta": false,
+			"first_click": false,
+			"next_click": false,
+			"browse_to_address": "http://192.168.254.33/machine_status.html",
+			"counter_field": "body > h2:nth-child(11)"
 		}
 	]
 }
