@@ -1,8 +1,7 @@
 {
 	"printers": [
-		
 		{
-			"id": 2,
+			"id": 1,
 			"ip_address": "http://192.168.120.34",
 			"brand": "Sharp",
 			"model": "AR-M257",
@@ -19,25 +18,25 @@
 			"counter_field": "body > h2:nth-child(11)"
 		},
 		{
-			"id": 3,
-			"ip_address": "http://192.168.120.31",
-			"brand": "Canon",
-			"model": "1730",
-			"ui_type": "canonOld",
-			"name": "Wire Check",
-			"auth_type": "In web Auth",
-			"user": "7654321",
-			"password": false,
-			"selector_user": "body > form:nth-child(1) > center:nth-child(4) > p:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(13) > td:nth-child(4) > input:nth-child(1)",
-			"selector_password": false,
-			"cta": "body > form:nth-child(1) > center:nth-child(4) > p:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(16) > td:nth-child(3) > a:nth-child(1)",
-			"first_click": "body > form:nth-child(1) > center:nth-child(4) > p:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(2) > input:nth-child(1)",
-			"next_click": false,
-			"browse_to_address": "http://192.168.120.31/_counter.html",
-			"counter_field": ".ModuleElement > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"
-		},
+      "id": 2,
+      "ip_address": "http://192.168.120.31",
+      "brand": "Canon",
+      "model": "1730",
+      "ui_type": "canonOld",
+      "name": "Ingenieria P2",
+      "auth_type": "In web Auth",
+      "user": "7654321",
+      "password": "7654321",
+      "selector_user": "body > form:nth-child(1) > center:nth-child(4) > p:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(9) > td:nth-child(3) > input:nth-child(1)",
+      "selector_password": "body > form:nth-child(1) > center:nth-child(4) > p:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(10) > td:nth-child(3) > input:nth-child(1)",
+      "cta": "body > form:nth-child(1) > center:nth-child(4) > p:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(17) > td:nth-child(3) > a:nth-child(1)",
+      "first_click": "body > form:nth-child(1) > center:nth-child(4) > p:nth-child(1) > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(6) > td:nth-child(2) > input:nth-child(1)",
+      "next_click": false,
+      "browse_to_address": "http://192.168.120.31/_counter.html",
+      "counter_field": ".ModuleElement > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"
+    },
 		{
-			"id": 4,
+			"id": 3,
 			"ip_address": "http://192.168.254.5",
 			"brand": "Canon",
 			"model": "iR-ADV 4051",
@@ -55,7 +54,7 @@
 			"counter_field": "#mainCounterInformationModule > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"
 		},
 		{
-			"id": 5,
+			"id": 4,
 			"ip_address": "http://192.168.170.35",
 			"brand": "Sharp",
 			"model": "AR-M257",
@@ -73,7 +72,7 @@
 			"counter_field": "body > h2:nth-child(11)"
 		},
 		{
-			"id": 6,
+			"id": 5,
 			"ip_address": "http://192.168.115.32",
 			"brand": "Canon",
 			"model": "iR-ADV C5250",
@@ -91,7 +90,7 @@
 			"counter_field": "#mainCounterInformationModule > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"
 		},
 		{
-			"id": 7,
+			"id": 6,
 			"ip_address": "http://192.168.145.31",
 			"brand": "Brother",
 			"model": "HL-L8260CDW",
@@ -109,7 +108,7 @@
 			"counter_field": "div.contentsGroup:nth-child(6) > dl:nth-child(2) > dd:nth-child(2)"
 		},
 		{
-			"id": 8,
+			"id": 7,
 			"ip_address": "http://192.168.115.31",
 			"brand": "Canon",
 			"model": "iR-ADV 4051",
@@ -127,7 +126,7 @@
 			"counter_field": "#mainCounterInformationModule > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"
 		},
 		{
-			"id": 9,
+			"id": 8,
 			"ip_address": "http://192.168.130.30",
 			"brand": "Canon",
 			"model": "1730",
@@ -145,7 +144,7 @@
 			"counter_field": ".ModuleElement > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"
 		},
 		{
-			"id": 10,
+			"id": 9,
 			"ip_address": "http://192.168.140.31",
 			"brand": "Canon",
 			"model": "1730",
@@ -168,7 +167,7 @@
 			"brand": "Canon",
 			"model": "1730",
 			"ui_type": "canonOld",
-			"name": "Calidad P4A",
+			"name": "Almacen P4A",
 			"auth_type": "In web Auth",
 			"user": "7654321",
 			"password": "7654321",
@@ -183,20 +182,20 @@
 		{
 			"id": 11,
 			"ip_address": "http://192.168.170.31",
-			"brand": "Sharp",
-			"model": "AR-M257",
-			"ui_type": "sharp",
+			"brand": "Canon",
+			"model": "iR-ADV 4245",
+			"ui_type": "canonNew",
 			"name": "Calidad P7",
 			"auth_type": "In web Auth",
-			"user": "admin",
-			"password": "Sharp",
-			"selector_user": false,
-			"selector_password": false,
-			"cta": false,
+			"user": "7654321",
+			"password": "3676",
+			"selector_user": ".PropertyListComponent > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(2) > input:nth-child(1)",
+			"selector_password": ".PropertyListComponent > tbody:nth-child(3) > tr:nth-child(3) > td:nth-child(2) > input:nth-child(1)",
+			"cta": ".ButtonEnable",
 			"first_click": false,
-			"next_click": false,
-			"browse_to_address": "http://192.168.170.31/machine_status.html",
-			"counter_field": "body > h2:nth-child(11)"
+			"next_click": ".App1_7",
+			"browse_to_address": "http://192.168.170.31:8000/rps/dcounter.cgi",
+			"counter_field": "#mainCounterInformationModule > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"
 		},
 		{
 			"id": 12,
@@ -214,6 +213,77 @@
 			"first_click": false,
 			"next_click": false,
 			"browse_to_address": "http://192.168.254.33/machine_status.html",
+			"counter_field": "body > h2:nth-child(11)"
+		},
+		{
+			"id": 13,
+			"ip_address": "http://192.168.254.32",
+			"brand": "Sharp",
+			"model": "AR-M276",
+			"ui_type": "sharp",
+			"name": "Almacen Ge",
+			"auth_type": "In web Auth",
+			"user": "admin",
+			"password": "Sharp",
+			"selector_user": false,
+			"selector_password": false,
+			"cta": false,
+			"first_click": false,
+			"next_click": false,
+			"browse_to_address": "http://192.168.254.33/machine_status.html",
+			"counter_field": "body > h2:nth-child(11)"
+		},
+		{
+			"id": 14,
+			"ip_address": "http://192.168.170.32",
+			"brand": "Brother",
+			"model": "HL-L8360CDW",
+			"ui_type": "canonOld",
+			"name": "Calidad P7",
+			"auth_type": "In web Auth",
+			"user": "Poderoso23",
+			"password": false,
+			"selector_user": "#LogBox",
+			"selector_password": false,
+			"cta": "#login",
+			"first_click": "#LogBox",
+			"next_click": false,
+			"browse_to_address": "http://192.168.170.32/general/information.html",
+			"counter_field": "div.contentsGroup:nth-child(6) > dl:nth-child(2) > dd:nth-child(2)"
+		},
+		{
+			"id": 15,
+			"ip_address": "http://192.168.254.30",
+			"brand": "Sharp",
+			"model": "MX-M453N",
+			"ui_type": "sharp",
+			"name": "Accounting",
+			"auth_type": "Basic Auth",
+			"user": "admin",
+			"password": "7654321",
+			"selector_user": false,
+			"selector_password": false,
+			"cta": false,
+			"next_click": false,
+			"browse_to_address": "http://192.168.254.30/sys_count.html",
+			"counter_field": "table.matrix:nth-child(3) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)"
+		},
+		{
+			"id": 16,
+			"ip_address": "http://192.168.170.29",
+			"brand": "Sharp",
+			"model": "AR-M260",
+			"ui_type": "sharp",
+			"name": "Recursos Humanos P7",
+			"auth_type": "In web Auth",
+			"user": "admin",
+			"password": "Sharp",
+			"selector_user": false,
+			"selector_password": false,
+			"cta": false,
+			"first_click": false,
+			"next_click": false,
+			"browse_to_address": "http://192.168.170.29/machine_status.html",
 			"counter_field": "body > h2:nth-child(11)"
 		}
 	]
