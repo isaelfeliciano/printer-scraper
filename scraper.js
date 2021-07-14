@@ -17,6 +17,7 @@ httpServer.listen(4000);
 
 // Scraper logic
 var path = require('path');
+console.log(process.cwd())
 if (process.pkg) {
   var puppeteer = require(path.resolve(process.cwd(), 'puppeteer'));
 } else {
