@@ -2,6 +2,9 @@
   "name": "printer-scraper",
   "version": "0.1.0",
   "private": true,
+  "bin": {
+    "main": "scraper.js"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -9,10 +12,12 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "express": "^4.17.1",
     "lowdb": "^1.0.0",
     "numeral": "^2.0.6",
     "puppeteer": "^8.0.0",
     "robotjs": "^0.6.0",
+    "socket.io": "^4.1.3",
     "vue": "^2.6.11"
   },
   "devDependencies": {

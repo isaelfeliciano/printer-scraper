@@ -1,22 +1,6 @@
 {
 	"printers": [
-		{
-			"id": 1,
-			"ip_address": "http://192.168.254.30",
-			"brand": "Canon",
-			"model": "iR-ADV 4245",
-			"ui_type": "canonNew",
-			"name": "Contabilidad",
-			"auth_type": "web",
-			"user": "7654321",
-			"password": "3676",
-			"selector_user": ".PropertyListComponent > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(2) > input:nth-child(1)",
-			"selector_password": ".PropertyListComponent > tbody:nth-child(3) > tr:nth-child(3) > td:nth-child(2) > input:nth-child(1)",
-			"cta": ".ButtonEnable",
-			"next_click": ".App1_7",
-			"browse_to_address": "http://192.168.254.30:8000/rps/dcounter.cgi",
-			"counter_field": "#mainCounterInformationModule > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)"
-		},
+		
 		{
 			"id": 2,
 			"ip_address": "http://192.168.120.34",

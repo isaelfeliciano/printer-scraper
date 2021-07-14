@@ -1,4 +1,27 @@
-const puppeteer = require('puppeteer');
+// Socket.io Server
+
+const httpServer = require("http").createServer();
+const io = require("socket.io")(httpServer, {
+  cors: {
+      origin: "*",
+      methods: ["GET", "POST"]
+    }
+});
+
+
+io.on('connection', (socket) => {
+  console.log('watcher app is connected')
+});
+
+httpServer.listen(4000);
+
+// Scraper logic
+var path = require('path');
+if (process.pkg) {
+  var puppeteer = require(path.resolve(process.cwd(), 'puppeteer'));
+} else {
+  var puppeteer = require('puppeteer');
+}
 const creds = require('./constants');
 const low = require('lowdb');
 const numeral = require('numeral');
@@ -104,4 +127,4 @@ const forLoop = async _ => {
   }
   process.exit(1);
 }
-forLoop();
+// forLoop();
