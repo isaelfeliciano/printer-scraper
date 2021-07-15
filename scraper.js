@@ -11,6 +11,11 @@ const io = require("socket.io")(httpServer, {
 
 io.on('connection', (socket) => {
   console.log('watcher app is connected')
+
+  socket.on("collectCounters", async (printers) => {
+    await forLoop(printers)
+    console.log("Coleccion de contadores completada")
+  })
 });
 
 httpServer.listen(4000);
@@ -32,7 +37,7 @@ const adapter = new FileSync('db.json');
 const db = low(adapter);
 
 // const printers = [];
-let printers = db.get('printers').value();
+// let printers = db.get('printers').value();
 // printers.push(printerslist);
 
 async function startBrowser() {
@@ -49,6 +54,7 @@ const ui_type = {}
 
 async function scrapPrinter (printer) {
   console.log(`Getting ${printer.name} counter`);
+  io.sockets.emit("statusUpdate", `Getting ${printer.name} counter`);
   const {browser, page} = await startBrowser();
   page.setViewport({width: 1366, height: 768});
   await page.setRequestInterception(true);
@@ -68,6 +74,7 @@ async function scrapPrinter (printer) {
     return
   }
   console.log(`${printer.name} is online`);
+  io.sockets.emit("statusUpdate", `${printer.name} is online`);
 
   if (!printer.cta) {
     console.log('Method 1');
@@ -77,6 +84,7 @@ async function scrapPrinter (printer) {
     let text = await page.evaluate(element => element.textContent, element)
     text = text.replace(':', '');
     console.log(printer.name, ': ' + numeral(text).format(0,0));
+    io.sockets.emit("statusUpdate", `${printer.name}, : ${numeral(text).format(0,0)}`);
     closeBrowser(browser);
     return
   }
@@ -95,6 +103,7 @@ async function scrapPrinter (printer) {
     let element = await page.$(printer.counter_field);
     let text = await page.evaluate(element => element.innerText, element);
     console.log(printer.name, ': ' + numeral(text).format(0,0));
+    io.sockets.emit("statusUpdate", `${printer.name}, : ${numeral(text).format(0,0)}`);
     closeBrowser(browser);
     return
   }
@@ -118,14 +127,16 @@ async function scrapPrinter (printer) {
   let element = await page.$(printer.counter_field);
   let text = await page.evaluate(element => element.innerText, element);
   console.log(printer.name, ': ' + numeral(text).format(0,0));
+  io.sockets.emit("statusUpdate", `${printer.name}, : ${numeral(text).format(0,0)}`);
   closeBrowser(browser);
 }
 
-const forLoop = async _ => {
+const forLoop = async printers => {
   for (let i = 0; i < printers.length; i++) {
     const printer = printers[i];
     await scrapPrinter(printer);
   }
-  process.exit(1);
+  io.sockets.emit("statusUpdate", "completada")
+  // process.exit(1);
 }
 // forLoop();

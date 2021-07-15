@@ -23,3 +23,10 @@ pnpm-debug.log*
 *.sw?
 puppeteer/
 scraper.exe
+config.sublime-project
+config.sublime-workspace
+neutralinojs.log
+printer-scraper.exe
+res.neu
+Scraper Server-win.exe
+WebView2Loader.dll
