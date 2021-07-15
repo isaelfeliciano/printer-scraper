@@ -128,6 +128,7 @@ async function scrapPrinter (printer) {
   let text = await page.evaluate(element => element.innerText, element);
   console.log(printer.name, ': ' + numeral(text).format(0,0));
   io.sockets.emit("statusUpdate", `${printer.name}, : ${numeral(text).format(0,0)}`);
+  io.sockets.emit("updateCounter", {_id: printer._id, counter: parseInt(text)})
   closeBrowser(browser);
 }
 
