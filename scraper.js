@@ -84,7 +84,7 @@ async function scrapPrinter (printer) {
     let text = await page.evaluate(element => element.textContent, element)
     text = text.replace(':', '');
     console.log(printer.name, ': ' + numeral(text).format(0,0));
-    io.sockets.emit("statusUpdate", `${printer.name}, : ${numeral(text).format(0,0)}`);
+    io.sockets.emit("updateCounter", {_id: printer._id, counter: numeral(text)._value});
     closeBrowser(browser);
     return
   }
@@ -103,7 +103,7 @@ async function scrapPrinter (printer) {
     let element = await page.$(printer.counter_field);
     let text = await page.evaluate(element => element.innerText, element);
     console.log(printer.name, ': ' + numeral(text).format(0,0));
-    io.sockets.emit("statusUpdate", `${printer.name}, : ${numeral(text).format(0,0)}`);
+    io.sockets.emit("updateCounter", {_id: printer._id, counter: parseInt(text)});
     closeBrowser(browser);
     return
   }
@@ -127,7 +127,6 @@ async function scrapPrinter (printer) {
   let element = await page.$(printer.counter_field);
   let text = await page.evaluate(element => element.innerText, element);
   console.log(printer.name, ': ' + numeral(text).format(0,0));
-  io.sockets.emit("statusUpdate", `${printer.name}, : ${numeral(text).format(0,0)}`);
   io.sockets.emit("updateCounter", {_id: printer._id, counter: parseInt(text)})
   closeBrowser(browser);
 }
