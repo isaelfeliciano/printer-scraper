@@ -78,13 +78,29 @@ async function scrapPrinter (printer) {
 
   if (!printer.cta) {
     console.log('Method 1');
+    if (printer.status_page) {
+      await page.goto(`${printer.ip_address}/${printer.status_page}`);
+      await page.waitForSelector(printer.toner_field);
+      let element = await page.$(printer.toner_field);
+      var toner = await page.evaluate(element => element.textContent, element);
+    }
     await page.goto(printer.browse_to_address);
     await page.waitForSelector(printer.counter_field);
-    let element = await page.$(printer.counter_field);
+    if (typeof toner === "undefined") {
+      let element = await page.$(printer.toner_field);
+      var toner = await page.evaluate(element => element.textContent, element)
+    }
+    element = await page.$(printer.counter_field);
     let text = await page.evaluate(element => element.textContent, element)
     text = text.replace(':', '');
     console.log(printer.name, ': ' + numeral(text).format(0,0));
-    io.sockets.emit("updateCounter", {_id: printer._id, counter: numeral(text)._value});
+    console.log(toner)
+    io.sockets.emit("updateCounter", {
+      _id: printer._id,
+      counter: numeral(text)._value,
+      toner: toner,
+      method: "method 1"
+    });
     closeBrowser(browser);
     return
   }
@@ -98,12 +114,20 @@ async function scrapPrinter (printer) {
     await page.keyboard.type(printer.user);
     await page.click(printer.cta);
     await page.waitForTimeout(2000);
+    let element = await page.$(printer.toner_field);
+    let toner = await page.evaluate(element => element.innerText, element);
     await page.goto(printer.browse_to_address);
     await page.waitForSelector(printer.counter_field);
-    let element = await page.$(printer.counter_field);
+    element = await page.$(printer.counter_field);
     let text = await page.evaluate(element => element.innerText, element);
     console.log(printer.name, ': ' + numeral(text).format(0,0));
-    io.sockets.emit("updateCounter", {_id: printer._id, counter: parseInt(text)});
+    console.log(toner);
+    io.sockets.emit("updateCounter", {
+      _id: printer._id,
+      counter: parseInt(text),
+      toner: toner,
+      method: "method 2"
+    });
     closeBrowser(browser);
     return
   }
@@ -117,6 +141,11 @@ async function scrapPrinter (printer) {
   await page.click(printer.selector_password);
   await page.keyboard.type(printer.password);
   await page.click(printer.cta);
+  if (!printer.status_page) {
+    await page.waitForSelector(printer.toner_field)
+    let element = await page.$(printer.toner_field);
+    var toner = await page.evaluate(element => element.innerText, element);
+  }
   if (printer.next_click) {
     await page.waitForSelector(printer.next_click);
     await page.click(printer.next_click);
@@ -124,10 +153,20 @@ async function scrapPrinter (printer) {
   await page.waitForTimeout(2000);
   await page.goto(printer.browse_to_address);
   await page.waitForSelector(printer.counter_field);
-  let element = await page.$(printer.counter_field);
+  if (typeof toner === "undefined") {
+    element = await page.$(printer.toner_field);
+    var toner = await page.evaluate(element => element.innerText, element); 
+  }
+  element = await page.$(printer.counter_field);
   let text = await page.evaluate(element => element.innerText, element);
   console.log(printer.name, ': ' + numeral(text).format(0,0));
-  io.sockets.emit("updateCounter", {_id: printer._id, counter: parseInt(text)})
+  console.log(toner)
+  io.sockets.emit("updateCounter", {
+    _id: printer._id,
+    counter: parseInt(text),
+    toner: toner,
+    method: "method 3"
+  })
   closeBrowser(browser);
 }
 
