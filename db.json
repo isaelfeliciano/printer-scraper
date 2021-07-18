@@ -7,6 +7,7 @@
 			"brand": "Sharp",
 			"model": "AR-M257",
 			"method": "",
+			"type": "printer",
 			"ui_type": "sharp",
 			"name": "Shipping 2",
 			"auth_type": "Basic Auth",
@@ -28,6 +29,7 @@
       "brand": "Canon",
       "model": "1730",
       "method": "",
+      "type": "printer",
       "ui_type": "canonOld",
       "name": "Ingenieria P2",
       "auth_type": "In web Auth",
@@ -50,6 +52,7 @@
 			"brand": "Canon",
 			"model": "iR-ADV 4051",
 			"method": "",
+			"type": "printer",
 			"ui_type": "canonNew",
 			"name": "Recepcion",
 			"auth_type": "In web Auth",
@@ -72,6 +75,7 @@
 			"brand": "Sharp",
 			"model": "AR-M257",
 			"method": "",
+			"type": "printer",
 			"ui_type": "sharp",
 			"name": "Almacen P7",
 			"auth_type": "In web Auth",
@@ -84,7 +88,7 @@
 			"next_click": false,
 			"browse_to_address": "http://192.168.170.35/machine_status.html",
 			"counter_field": "body > h2:nth-child(11)",
-			"toner_field": "",
+			"toner_field": "div.msts:nth-child(10) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)",
 			"date_collected": ""
 		},
 		{
@@ -94,6 +98,7 @@
 			"brand": "Canon",
 			"model": "iR-ADV C5250",
 			"method": "",
+			"type": "printer",
 			"ui_type": "canonNew",
 			"name": "Moldeo Ingenieria",
 			"auth_type": "In web Auth",
@@ -106,7 +111,7 @@
 			"next_click": ".App1_7",
 			"browse_to_address": "http://192.168.115.32:8000/rps/dcounter.cgi",
 			"counter_field": "#mainCounterInformationModule > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)",
-			"toner_field": "",
+			"toner_field": "#tonerInfomationModule > table:nth-child(2) > tbody:nth-child(3) > tr:nth-child(5) > td:nth-child(2)",
 			"date_collected": ""
 		},
 		{
@@ -116,6 +121,7 @@
 			"brand": "Brother",
 			"model": "HL-L8260CDW",
 			"method": "",
+			"type": "printer",
 			"ui_type": "canonOld",
 			"name": "Ingenieria P4B",
 			"auth_type": "In web Auth",
@@ -128,7 +134,7 @@
 			"next_click": false,
 			"browse_to_address": "http://192.168.145.31/general/information.html",
 			"counter_field": "div.contentsGroup:nth-child(6) > dl:nth-child(2) > dd:nth-child(2)",
-			"toner_field": "",
+			"toner_field": "div.contentsGroup:nth-child(7) > dl:nth-child(2) > dd:nth-child(30)",
 			"date_collected": ""
 		},
 		{
@@ -138,6 +144,7 @@
 			"brand": "Canon",
 			"model": "iR-ADV 4051",
 			"method": "",
+			"type": "printer",
 			"ui_type": "canonNew",
 			"name": "Modeo Produccion",
 			"auth_type": "In web Auth",
@@ -160,6 +167,7 @@
 			"brand": "Canon",
 			"model": "1730",
 			"method": "",
+			"type": "printer",
 			"ui_type": "canonOld",
 			"name": "Compras P3",
 			"auth_type": "In web Auth",
@@ -182,6 +190,7 @@
 			"brand": "Canon",
 			"model": "1730",
 			"method": "",
+			"type": "printer",
 			"ui_type": "canonOld",
 			"name": "Calidad P4A",
 			"auth_type": "In web Auth",
@@ -204,6 +213,7 @@
 			"brand": "Canon",
 			"model": "1730",
 			"method": "",
+			"type": "printer",
 			"ui_type": "canonOld",
 			"name": "Almacen P4A",
 			"auth_type": "In web Auth",
@@ -226,6 +236,7 @@
 			"brand": "Canon",
 			"model": "iR-ADV 4245",
 			"method": "",
+			"type": "printer",
 			"ui_type": "canonNew",
 			"name": "Calidad P7",
 			"auth_type": "In web Auth",
@@ -238,7 +249,7 @@
 			"next_click": ".App1_7",
 			"browse_to_address": "http://192.168.170.31:8000/rps/dcounter.cgi",
 			"counter_field": "#mainCounterInformationModule > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(3) > tr:nth-child(1) > td:nth-child(2)",
-			"toner_field": "",
+			"toner_field": "#tonerInfomationModule > table:nth-child(2) > tbody:nth-child(3) > tr:nth-child(2) > td:nth-child(2)",
 			"date_collected": ""
 		},
 		{
@@ -248,6 +259,7 @@
 			"brand": "Sharp",
 			"model": "AR-M257",
 			"method": "",
+			"type": "printer",
 			"ui_type": "sharp",
 			"name": "Haymar P1",
 			"auth_type": "In web Auth",
@@ -260,7 +272,7 @@
 			"next_click": false,
 			"browse_to_address": "http://192.168.254.33/machine_status.html",
 			"counter_field": "body > h2:nth-child(11)",
-			"toner_field": "",
+			"toner_field": "div.msts:nth-child(10) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)",
 			"date_collected": ""
 		},
 		{
@@ -270,6 +282,7 @@
 			"brand": "Sharp",
 			"model": "AR-M276",
 			"method": "",
+			"type": "printer",
 			"ui_type": "sharp",
 			"name": "Almacen Ge",
 			"auth_type": "In web Auth",
@@ -280,9 +293,9 @@
 			"cta": false,
 			"first_click": false,
 			"next_click": false,
-			"browse_to_address": "http://192.168.254.33/machine_status.html",
+			"browse_to_address": "http://192.168.254.32/machine_status.html",
 			"counter_field": "body > h2:nth-child(11)",
-			"toner_field": "",
+			"toner_field": "div.msts:nth-child(10) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)",
 			"date_collected": ""
 		},
 		{
@@ -292,6 +305,7 @@
 			"brand": "Brother",
 			"model": "HL-L8360CDW",
 			"method": "",
+			"type": "printer",
 			"ui_type": "canonOld",
 			"name": "Calidad P7",
 			"auth_type": "In web Auth",
@@ -304,7 +318,7 @@
 			"next_click": false,
 			"browse_to_address": "http://192.168.170.32/general/information.html",
 			"counter_field": "div.contentsGroup:nth-child(6) > dl:nth-child(2) > dd:nth-child(2)",
-			"toner_field": "",
+			"toner_field": "div.contentsGroup:nth-child(7) > dl:nth-child(2) > dd:nth-child(30)",
 			"date_collected": ""
 		},
 		{
@@ -314,6 +328,7 @@
 			"brand": "Sharp",
 			"model": "MX-M453N",
 			"method": "",
+			"type": "printer",
 			"ui_type": "sharp",
 			"name": "Accounting",
 			"auth_type": "Basic Auth",
@@ -335,6 +350,7 @@
 			"brand": "Sharp",
 			"model": "AR-M260",
 			"method": "",
+			"type": "printer",
 			"ui_type": "sharp",
 			"name": "Recursos Humanos P7",
 			"auth_type": "In web Auth",
@@ -347,7 +363,7 @@
 			"next_click": false,
 			"browse_to_address": "http://192.168.170.29/machine_status.html",
 			"counter_field": "body > h2:nth-child(11)",
-			"toner_field": "",
+			"toner_field": "div.msts:nth-child(10) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)",
 			"date_collected": ""
 		}
 	]
