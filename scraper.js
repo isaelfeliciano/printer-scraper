@@ -71,6 +71,11 @@ async function scrapPrinter (printer) {
     await page.goto(printer.ip_address);
   } catch (e) {
     console.log('Printer not online', e.message);
+    io.sockets.emit("updateCounter", {
+      _id: printer._id,
+      counter: "desconectado",
+      toner: "desconectado"
+    });
     return
   }
   console.log(`${printer.name} is online`);
