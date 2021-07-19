@@ -30,3 +30,5 @@ printer-scraper.exe
 res.neu
 Scraper Server-win.exe
 WebView2Loader.dll
+yarn.lock
+scraper.log
