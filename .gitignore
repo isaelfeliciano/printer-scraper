@@ -32,5 +32,7 @@ Scraper Server-win.exe
 WebView2Loader.dll
 yarn.lock
 scraper.log
-scraper.bak.exe
 logg.exe
+logg.js
+node_modules.zip
+scraper.bat
