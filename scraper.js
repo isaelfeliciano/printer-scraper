@@ -1,4 +1,4 @@
-const numeral = require('numeral')
+const numeral = require('numeral');
 const log4js = require('log4js');
 log4js.configure({
   appenders: { scraper: { type: "file", filename: "scraper.log" } },
