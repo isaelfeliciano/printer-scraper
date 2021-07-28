@@ -182,6 +182,6 @@ const forLoop = async printers => {
     await scrapPrinter(printer);
   }
   io.sockets.emit("statusUpdate", "completada")
-  // process.exit(1);
+  process.exit(1);
 }
 // forLoop();

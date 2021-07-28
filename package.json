@@ -6,7 +6,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "pkg": "pkg -t node16-win-x64 scraper.js --public --options max_old_space_size=4096"
   },
   "pkg": {
     "scripts": "scraper.js",
