@@ -26,6 +26,10 @@ io.on('connection', (socket) => {
     await forLoop(printers)
     logger.info("Coleccion de contadores completada")
   })
+
+  socket.on("killProcess", () => {
+    process.exit(1)
+  })
 });
 
 httpServer.listen(4000);
@@ -182,6 +186,7 @@ const forLoop = async printers => {
     await scrapPrinter(printer);
   }
   io.sockets.emit("statusUpdate", "completada")
-  process.exit(1);
+  io.sockets.emit("collectionDone")
+  // process.exit(1);
 }
 // forLoop();
